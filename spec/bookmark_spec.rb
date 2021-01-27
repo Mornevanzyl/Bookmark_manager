@@ -3,11 +3,9 @@ require_relative '../lib/bookmark'
 describe Bookmark do
   describe '.all' do
     it 'contains some url bookmarks' do
-      connection = PG. connect(dbname: 'bookmark_manager_test')
-
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.youtube.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.co.uk');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.bbc.co.uk');")
+      Bookmark.create("http://www.youtube.com")
+      Bookmark.create("http://www.google.co.uk")
+      Bookmark.create("http://www.bbc.co.uk")
 
       bookmarks = Bookmark.all
 
@@ -17,5 +15,12 @@ describe Bookmark do
     end
   end
 
-  
+  describe '.create' do 
+    it 'creates a new bookmark' do 
+      Bookmark.create('www.testbookmark.com')
+      
+      expect(Bookmark.all).to include 'www.testbookmark.com'
+    end
+  end
+
 end
