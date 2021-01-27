@@ -7,6 +7,10 @@
 > So that I can see my bookmarks,
 > I would like the webpage to show a list of my bookmarks"
 
+> "As a user,
+> So that I can save my favourite bookmarks,
+> I would like to add a bookmark to my list"
+
 Domain modelling sheet:
 https://docs.google.com/document/d/1K6v9FamjWfP_zbuEVz4bkXWPAzFOsBsuaZXNNXVCtm8/edit?usp=sharing
 
